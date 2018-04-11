@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Hiiljalanjälki laskuri</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <!-- <link rel="icon" href="images/favicon.ico"> -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        
+    <link rel="stylesheet" type="text/css" href="css/StyleSheet.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<script src="Script1.js" type="text/javascript"></script>
+</head>
+<body>
+    <!-- comment -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs col-sm col-md col-lg text-center" id="announcement-panel">
+				<h1 id="announcement-header">Millainen hiilijalanjälki sinulla on?</h1>
+				<h3 id="announcement-subheader">Tällä laskurilla saat selville</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+				<div id="form">
+					<form>
+						<h3 id="home-energy-label"><i class="fa fa-home" aria-hidden="true"></i> Kodin sähkönkulutus</h3>	
+						<div class="form-group">
+							<label for="electric">Kuukausittainen sähkölasku</label>
+							<div class="input-group">
+								<div class="input-group-addon">€</div>
+								<input class="form-control" id="electric" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">Laita 0, jos et tiedä. Jos jätät tyhjäksi, oletusarvo on 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="gas">Kuukausittainen kaasulasku</label>
+							<div class="input-group">
+								<div class="input-group-addon">€</div>
+								<input class="form-control" id="gas" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">Laita 0, jos et tiedä. Jos jätät tyhjäksi, oletusarvo on 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="oil">Kuukausittainen Hiililasku</label>
+							<div class="input-group">
+								<div class="input-group-addon">€</div>
+								<input class="form-control" id="oil" type="number" min="0" step="0.01">
+							</div>
+							<span class="help-block">Laita 0, jos et tiedä. Jos jätät tyhjäksi, oletusarvo on 0.</span>
+						</div>
+						<br/>
+						<h3 class="form-section-label" id="travel-label"><i class="fa fa-globe" aria-hidden="true"></i> Matkustus</h3>
+						<div class="form-group">
+							<label for="car">Autolla ajetut kilometrit/vuosi</label>
+							<input class="form-control" id="car" type="number" min="0" step="1">
+							<span class="help-block">Laita 0, jos et tiedä. Jos jätät tyhjäksi, oletusarvo on 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="flights-4-less">Lentokonematkat viimeisen vuoden aikana (Alle neljän tunnin lennot)</label>
+							<input class="form-control" id="flights-4-less" type="number" min="0" step="1">
+							<span class="help-block">Laita 0, jos et tiedä. Jos jätät tyhjäksi, oletusarvo on 0.</span>
+						</div>
+						<div class="form-group">
+							<label for="flights-4-more">Lentokonematkat viimeisen vuoden aikana (Yli neljän tunnin lennot)</label>
+							<input class="form-control" id="flights-4-more" type="number" min="0" step="1">
+							<span class="help-block">Laita 0, jos et tiedä. Jos jätät tyhjäksi, oletusarvo on 0.</span>
+						</div>
+						<br/>
+						<h3 class="form-section-label" id="waste-label"><i class="fa fa-recycle" aria-hidden="true"></i> Kierrätys</h3>
+						<div class="form-group">
+							<label>Kierrätätkö paperia?</label>
+							<div class="alert alert-danger" role="alert" id="newspaper-alert"><strong>Hups!</strong> Valitse kyllä tai ei.</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="newspaperOptionsRadios" id="optionsRadio1" value="option1">
+									Kyllä
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="newspaperOptionsRadios" id="optionsRadio2" value="option2">
+									Ei
+								</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Kierrätätkö metallit?</label>
+							<div class="alert alert-danger" role="alert" id="alum-tin-alert"><strong>Hups!</strong> Valitse kyllä tai ei.</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="alumtinOptionsRadios" id="optionsRadio3" value="option3">
+									Kyllä
+								</label>
+							</div>
+							<div class="radio">
+								<label>
+									<input type="radio" name="alumtinOptionsRadios" id="optionsRadio4" value="option4">
+									Ei
+								</label>
+							</div>
+						</div>
+						<br/>
+						<button id="calculate-btn" type="button" class="btn btn-success btn-lg btn-block">Calculate</button>
+					</form>
+				</div>
+
+				<div id="results" class="text-center">
+					<h1 id="score"></h1>
+					<br/>
+					<p class="lead">Tämä lukema edustaa kasvihuonekaasupäästöjesi määrän CO2 -yksikköinä vuotuisella tasolla</p>
+					<br/>
+					<h5 class="bg-success score-info">6,000 tai alle on LOISTAVA!</h5>
+					<h5 class="bg-info score-info">6,000 - 15,999 on HYVÄ.</h5>
+					<h5 class="bg-warning score-info">16,000 - 22,000 on KESKINKERTAINEN</h5>
+					<h5 class="bg-danger score-info">22,000 tai yli on SURKEA</h5>
+					<br/>
+					<br/>
+					<br/>
+					<button id="recalculate-btn" type="button" class="btn btn-success btn-lg btn-block">Recalculate</button>
+				</div>
+			</div>	
+			<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+			</div>	
+		</div>
+	</div>
+</body>
+</html>
