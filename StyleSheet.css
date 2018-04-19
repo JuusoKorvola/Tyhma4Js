@@ -1,20 +1,19 @@
-﻿#announcement-panel {
+﻿#eka-paneeli {
 	padding-top: 80px;
 	padding-bottom: 80px;
 }
-/*
-*/ 
-#announcement-header, #announcement-subheader {
+
+#a-headeri, #a-subheaderi {
 	color: white;
 	background-color: rgba(38, 77, 0, 0.7);
 	padding: 5px;
 }
 
-#announcement-header {
+#a-headeri {
 	font-size: 4em;
 }
 
-#announcement-subheader {
+#a-subheaderi {
 	font-size: 2em;
 }
 
@@ -22,22 +21,22 @@
 	padding: 40px;
 }
 
-#announcement-panel {
+#eka-paneeli {
 	
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
 
-#home-energy-label, .fa-home {
+#koti-energia-label, .fa-home {
 	color: #FF8C00;
 }
 
-#travel-label, .fa-globe {
+#matkustus-label, .fa-globe {
 	color: #008B8B;
 }
 
-#waste-label, .fa-recycle {
+#jäte-label, .fa-recycle {
 	color: #228B22;
 }
 
