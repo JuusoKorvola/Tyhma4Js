@@ -16,14 +16,16 @@
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="Script1.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <!-- comment -->
+    
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-xs col-sm col-md col-lg text-center" id="eka-paneeli">
 				<h1 id="a-headeri">Millainen hiilijalanjälki sinulla on?</h1>
-				<h3 id="a-subheaderi">Tällä laskurilla saat selville</h3>
+				<h3 id="a-subheaderi">{{message}}</h3>
+				
 			</div>
 		</div>
 		<div class="row">
@@ -132,5 +134,6 @@
 			</div>	
 		</div>
 	</div>
+	<script src="VueToimi.js"></script>
 </body>
 </html>

@@ -5,11 +5,11 @@ $(document).ready(function () {
     $("#results").hide();
     $(".alert").hide();
 
-    // Estetään negatiivisten numeroiden tai välilyöntien lisäys input kenttiin
+    // Estetï¿½ï¿½n negatiivisten numeroiden tai vï¿½lilyï¿½ntien lisï¿½ys input kenttiin
     $("[type='number']").bind("keydown", function (e) {
         var code = e.keyCode || e.which;
         //Codet ovat napin painalluksille tarkoitetut numerot, esim code == 32 tarkoittaa
-        //välilyöntiä. Tällä pyritään kertomaan lomakkeelle mitä painalluksia se ei saisi ottaa vastaan.
+        //vï¿½lilyï¿½ntiï¿½. Tï¿½llï¿½ pyritï¿½ï¿½n kertomaan lomakkeelle mitï¿½ painalluksia se ei saisi ottaa vastaan.
         if (code == 189 || code == 173 || code == 32 || code == 69 || code == 109) {
             return false;
         }
@@ -19,11 +19,11 @@ $(document).ready(function () {
         var calculateAndDisplayScore = function () {
             window.scrollTo(0, 400);
  
-            //Piilotetaan kaavake jos kaikki syötteet on täytetty ja "laske" nappulaa
+            //Piilotetaan kaavake jos kaikki syï¿½tteet on tï¿½ytetty ja "laske" nappulaa
             //painettu
             $("#form").hide();
 
-            // Syötteiden muuttujat sekä html elementti id:t
+            // Syï¿½tteiden muuttujat sekï¿½ html elementti id:t
             var sahkoInput = document.getElementById("sahko").value;
             var kaasuInput = document.getElementById("kaasu").value;
             var hiiliInput = document.getElementById("hiili").value;
@@ -32,8 +32,8 @@ $(document).ready(function () {
             var lento4MoreInput = document.getElementById("lento-4-more").value;
 
 
-            // Alustetaan kaikki muuttujat aluksi tyhjäksi jotta lomake ei anna
-            //vahingossa virheellistä tulosta esim sähkön tai matkustuksen osalta.
+            // Alustetaan kaikki muuttujat aluksi tyhjï¿½ksi jotta lomake ei anna
+            //vahingossa virheellistï¿½ tulosta esim sï¿½hkï¿½n tai matkustuksen osalta.
             var sahkoScore = "";
             var kaasuScore = "";
             var hiiliScore = "";
@@ -46,20 +46,20 @@ $(document).ready(function () {
             var totalScore = "";
             
 
-            //Mikäli kierrrätyspaperille on valitty kierrätykseksi kyllä
-            //annetaan paperinkierrätyksestä 0 lopulliseen scoreen
-            //muussa tapauksessa scoreen lisätään 184 pistettä.
+            //Mikï¿½li kierrrï¿½tyspaperille on valitty kierrï¿½tykseksi kyllï¿½
+            //annetaan paperinkierrï¿½tyksestï¿½ 0 lopulliseen scoreen
+            //muussa tapauksessa scoreen lisï¿½tï¿½ï¿½n 184 pistettï¿½.
             if (document.getElementById("optionsRadio1").checked) {
                 kierratysPaperi = 0;
             } else {
                 kierratysPaperi = 184;
             }
 
-            console.log("Kierrätyspaperi pisteesi on: " + kierratysPaperi);
+            console.log("Kierrï¿½tyspaperi pisteesi on: " + kierratysPaperi);
 
-            //Mikäli metallinkierrätykselle on valittu kierrätykseksi "kyllä"
-            //annetaan metallipisteitä 0 lopulliseen scoreen
-            //muussa tapauksessa scoreen lisätään 166 pistettä.
+            //Mikï¿½li metallinkierrï¿½tykselle on valittu kierrï¿½tykseksi "kyllï¿½"
+            //annetaan metallipisteitï¿½ 0 lopulliseen scoreen
+            //muussa tapauksessa scoreen lisï¿½tï¿½ï¿½n 166 pistettï¿½.
             if (document.getElementById("optionsRadio3").checked) {
                 alumMetScore = 0;
             } else {
@@ -67,14 +67,14 @@ $(document).ready(function () {
             }
 
 
-            console.log("Kierrätysmetallipisteesi on: " + alumMetScore);
+            console.log("Kierrï¿½tysmetallipisteesi on: " + alumMetScore);
 
 
-            //Sähkönkulutuksen laskussa käytetään vastaavaa menetelmää
-            //jos käyttäjä inputtiin 0 tai jättää vastaamatta, annetaan lopulliseen
+            //Sï¿½hkï¿½nkulutuksen laskussa kï¿½ytetï¿½ï¿½n vastaavaa menetelmï¿½ï¿½
+            //jos kï¿½yttï¿½jï¿½ inputtiin 0 tai jï¿½ttï¿½ï¿½ vastaamatta, annetaan lopulliseen
             //pisteytykseen 0. Muussa tapauksessa input kerrotaan aluksi
-            //0.808695 (tämä johtuen siitä että alkuperäinen laskukaava on 
-            //dollareiden mukaan) ja tämä kerrotaan vielä 105:llä
+            //0.808695 (tï¿½mï¿½ johtuen siitï¿½ ettï¿½ alkuperï¿½inen laskukaava on 
+            //dollareiden mukaan) ja tï¿½mï¿½ kerrotaan vielï¿½ 105:llï¿½
             if (sahkoInput === 0 || sahkoInput === "undefined") {
                 sahkoScore = 0;
             } else {
@@ -82,7 +82,7 @@ $(document).ready(function () {
             }
 
 
-            console.log("Sähköpisteesi on: " + sahkoScore);
+            console.log("Sï¿½hkï¿½pisteesi on: " + sahkoScore);
 
 
             //Kaasun laskemiseen sama homma, laskukaava alunperin 
@@ -96,9 +96,9 @@ $(document).ready(function () {
 
             console.log("Kaasupisteesi on: " + kaasuScore);
 
-            //Ja vielä hiilenkäytön kannalta sama laskukaava
-            //sillä erotuksella että hiilinlaskukaava kerrotaan 113
-            //koska ympäristövaikutukset ovat suuremmat.
+            //Ja vielï¿½ hiilenkï¿½ytï¿½n kannalta sama laskukaava
+            //sillï¿½ erotuksella ettï¿½ hiilinlaskukaava kerrotaan 113
+            //koska ympï¿½ristï¿½vaikutukset ovat suuremmat.
             if (hiiliInput === 0 || hiiliInput === "undefined") {
                 hiiliScore = 0;
             } else {
@@ -107,9 +107,9 @@ $(document).ready(function () {
 
             console.log("Hiilipisteesi on: " + hiiliScore);
 
-            //Sama juttu auton kanssa. Tässä erotuksena se että
-            //jenkki laskukaava käytti gallonia, joten konversio
-            //Litroihin tapahtuu jakamalla kilometri input 1.6xxx:llä
+            //Sama juttu auton kanssa. Tï¿½ssï¿½ erotuksena se ettï¿½
+            //jenkki laskukaava kï¿½ytti gallonia, joten konversio
+            //Litroihin tapahtuu jakamalla kilometri input 1.6xxx:llï¿½
 
             if (autoInput === 0 || autoInput === "undefined") {
                 autoScore = 0;
@@ -119,8 +119,8 @@ $(document).ready(function () {
 
             console.log("Autopisteesi on: " + autoScore);
 
-            //Vuosittainen lentäminen lentokoneella on jaettu kahteen eri
-            //osaan sillä alle 4 tunnin lennoissa ja yli neljän tunnin
+            //Vuosittainen lentï¿½minen lentokoneella on jaettu kahteen eri
+            //osaan sillï¿½ alle 4 tunnin lennoissa ja yli neljï¿½n tunnin
             //lennoissa kulutus kasvaa kovasti
             if (lento4LessInput === 0 || lento4LessInput === "undefined") {
                 lento4LessScore = 0;
@@ -128,7 +128,7 @@ $(document).ready(function () {
                 lento4LessScore = lento4LessInput * 1100;
             }
 
-            console.log("Alle neljän tunnin lentojen pistemäärä: " + lento4LessScore);
+            console.log("Alle neljï¿½n tunnin lentojen pistemï¿½ï¿½rï¿½: " + lento4LessScore);
 
             if (lento4MoreInput === 0 || lento4MoreInput === "undefined") {
                 lento4MoreScore = 0;
@@ -136,17 +136,17 @@ $(document).ready(function () {
                 lento4MoreScore = lento4MoreInput * 4400;
             }
 
-            console.log("Yli neljän tunnin lentojen pistemäärä: " + lento4MoreScore);
+            console.log("Yli neljï¿½n tunnin lentojen pistemï¿½ï¿½rï¿½: " + lento4MoreScore);
 
             //Lasketaan tulos energiankulutukselle muuttujaan energyscore
-            //joka yhdistää tulokset sähkön, kaasun ja hiilenkäytöstä.
-            //Lasketaan sama homma sekä matkustukselle autoilun ja lentämisen 
-            //osalta, sekä kierrätyksen osalta.
+            //joka yhdistï¿½ï¿½ tulokset sï¿½hkï¿½n, kaasun ja hiilenkï¿½ytï¿½stï¿½.
+            //Lasketaan sama homma sekï¿½ matkustukselle autoilun ja lentï¿½misen 
+            //osalta, sekï¿½ kierrï¿½tyksen osalta.
             var energyScore = sahkoScore + kaasuScore + hiiliScore;
             var travelScore = autoScore + lento4LessScore + lento4MoreScore;
             var jateScore = kierratysPaperi + alumMetScore;
 
-            //Lasketaan kaikki yhteen ja pyöristetään seuraavaan
+            //Lasketaan kaikki yhteen ja pyï¿½ristetï¿½ï¿½n seuraavaan
             //kokonaislukuun.
             totalScore = Math.round(energyScore + travelScore + jateScore);
             var formattedScore = totalScore.toLocaleString("en");
@@ -155,10 +155,21 @@ $(document).ready(function () {
 
             document.getElementById("score").innerHTML = formattedScore;
 
-            // Näytetään tulos
-            $("#results").show();
+            // Nï¿½ytetï¿½ï¿½n tulos
+            $("#results").show(function(){
+                console.log(totalScore);
+                if (totalScore <= 5999) {
+                    document.body.style.backgroundColor = "#ccff99";                    
+                } else if(totalScore >= 6000 && totalScore <= 15999 ) {
+                    document.body.style.backgroundColor = "#ccffff";
+                } else if (totalScore >= 16000 && totalScore <= 22000){
+                    document.body.style.backgroundColor ="#ffff66";
+                } else{
+                    document.body.style.backgroundColor="#ff9999";
+                }
+            });
 
-            // Päivitetään sivusto kun painetaan nappia
+            // Pï¿½ivitetï¿½ï¿½n sivusto kun painetaan nappia
             // "Laske uudelleen"
             $("#recalculate-btn").on("click", function () {
                 location.reload();
@@ -166,14 +177,14 @@ $(document).ready(function () {
             });
         }
 
-        // Katostaan että valinnat kierrätyspaperille ja metalleille on tehty
-        // ennne kuin laskenta ja tuloksen näyttäminen tehdään.
+        // Katostaan ettï¿½ valinnat kierrï¿½tyspaperille ja metalleille on tehty
+        // ennne kuin laskenta ja tuloksen nï¿½yttï¿½minen tehdï¿½ï¿½n.
         var kierratysPaperiSelectionYes = document.getElementById("optionsRadio1").checked;
         var kierratysPaperiSelectionNo = document.getElementById("optionsRadio2").checked;
         var kierratysAlumMetSelectionYes = document.getElementById("optionsRadio3").checked;
         var kierratysAlumMetSelectionNo = document.getElementById("optionsRadio4").checked;
 
-        //Näytetään herjaus mikäli valintoja ei ole tehty kierrätyspaperille ja metallille.
+        //Nï¿½ytetï¿½ï¿½n herjaus mikï¿½li valintoja ei ole tehty kierrï¿½tyspaperille ja metallille.
         //muussa tapauksessa kutsutaan funktiota calculateAndDisplayScore.
         if (kierratysPaperiSelectionYes == false && kierratysPaperiSelectionNo == false || kierratysAlumMetSelectionYes == false && kierratysAlumMetSelectionNo == false) {
             if (kierratysPaperiSelectionYes == false && kierratysPaperiSelectionNo == false) {
